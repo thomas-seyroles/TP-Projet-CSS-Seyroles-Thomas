@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ricochet, festival des berges · 25 et 26 juin 2027</title>
+  <meta name="description" content="Ricochet, deux jours de concerts au bord de la Loire à Saint-Galet : programme, artistes, billetterie et infos pratiques.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ===== En-tête ===== -->
+  <header class="site-header surface surface--bright">
+    <div class="container site-header__inner">
+      <a class="logo" href="#contenu">Ricochet <span class="logo__dates">25·26 juin</span></a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <ul class="nav" role="list">
+          <li><a class="nav__link" href="#programme">Programme</a></li>
+          <li><a class="nav__link" href="#artistes">Artistes</a></li>
+          <li><a class="nav__link" href="#billetterie">Billets</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <label class="theme-switch">
+        <input class="theme-switch__input" type="checkbox" id="theme-toggle">
+        Inverser le thème
+      </label>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero section surface surface--bright" aria-labelledby="hero-titre">
+      <div class="container hero__inner">
+        <div class="hero__heading">
+          <p class="hero__kicker">Festival des berges · 4<sup>e</sup> édition</p>
+          <h1 class="hero__title" id="hero-titre">Ricochet</h1>
+        </div>
+        <div class="hero__infos">
+          <p class="hero__date">Ven. <time datetime="2027-06-25">25</time> et sam. <time datetime="2027-06-26">26 juin 2027</time></p>
+          <p class="hero__place">Berges de la Loire, Saint-Galet</p>
+          <p class="hero__pitch">Deux jours de concerts les pieds dans l'herbe, deux scènes face à l'eau, huit formations et pas une minute de silence.</p>
+        </div>
+        <div class="hero__actions">
+          <a class="btn" href="#billetterie">Prendre mon billet</a>
+          <a class="btn btn--ghost" href="#programme">Voir le programme</a>
+        </div>
+        <svg class="ripples hero__visual" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <g class="ripples__set">
+            <circle class="ripples__outer" cx="130" cy="130" r="120"/>
+            <circle class="ripples__mid" cx="130" cy="130" r="80"/>
+            <circle class="ripples__core" cx="130" cy="130" r="42"/>
+          </g>
+          <g class="ripples__set">
+            <circle class="ripples__outer" cx="285" cy="255" r="72"/>
+            <circle class="ripples__mid" cx="285" cy="255" r="46"/>
+            <circle class="ripples__core" cx="285" cy="255" r="22"/>
+          </g>
+          <g class="ripples__set">
+            <circle class="ripples__outer" cx="360" cy="360" r="34"/>
+            <circle class="ripples__mid" cx="360" cy="360" r="20"/>
+            <circle class="ripples__core" cx="360" cy="360" r="9"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Programme ===== -->
+    <section class="section" id="programme" aria-labelledby="programme-titre">
+      <div class="container programme">
+        <h2 class="programme__title" id="programme-titre">Programme</h2>
+        <div class="programme__intro">
+          <p class="section-lead">Ouverture des portes à 16h. Les concerts s'enchaînent sans chevauchement entre les deux scènes.</p>
+          <ul class="legend" role="list">
+            <li class="legend__item" data-stage="galet">Scène Galet, sur la plage</li>
+            <li class="legend__item" data-stage="remous">Scène Remous, sous la halle</li>
+          </ul>
+        </div>
+
+        <div class="day programme__day1">
+          <h3 class="day__title">Vendredi 25 juin</h3>
+          <ol class="day__slots" role="list">
+            <li class="slot" id="slot-ardoise" data-stage="galet">
+              <time class="slot__time" datetime="2027-06-25T18:30">18h30</time>
+              <p class="slot__artist">Joséphine Ardoise</p>
+              <p class="slot__stage">Scène Galet</p>
+            </li>
+            <li class="slot" id="slot-kilometre" data-stage="remous">
+              <time class="slot__time" datetime="2027-06-25T20:00">20h00</time>
+              <p class="slot__artist">Kilomètre Zéro</p>
+              <p class="slot__stage">Scène Remous</p>
+            </li>
+            <li class="slot" id="slot-kraft" data-stage="galet">
+              <time class="slot__time" datetime="2027-06-25T21:30">21h30</time>
+              <p class="slot__artist">Mona Kraft</p>
+              <p class="slot__stage">Scène Galet</p>
+            </li>
+            <li class="slot" id="slot-saturnales" data-stage="galet">
+              <time class="slot__time" datetime="2027-06-25T23:00">23h00</time>
+              <p class="slot__artist">Les Saturnales</p>
+              <p class="slot__stage">Scène Galet</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="day programme__day2">
+          <h3 class="day__title">Samedi 26 juin</h3>
+          <ol class="day__slots" role="list">
+            <li class="slot" id="slot-fanfare" data-stage="remous">
+              <time class="slot__time" datetime="2027-06-26T16:30">16h30</time>
+              <p class="slot__artist">Fanfare des Tanneries, déambulation</p>
+              <p class="slot__stage">Scène Remous et berges</p>
+            </li>
+            <li class="slot" id="slot-orage" data-stage="remous">
+              <time class="slot__time" datetime="2027-06-26T18:00">18h00</time>
+              <p class="slot__artist">Orage Mécanique</p>
+              <p class="slot__stage">Scène Remous</p>
+            </li>
+            <li class="slot" id="slot-bassin" data-stage="galet">
+              <time class="slot__time" datetime="2027-06-26T20:00">20h00</time>
+              <p class="slot__artist">Bassin Versant</p>
+              <p class="slot__stage">Scène Galet</p>
+            </li>
+            <li class="slot" id="slot-dede" data-stage="galet">
+              <time class="slot__time" datetime="2027-06-26T22:00">22h00</time>
+              <p class="slot__artist">Dédé Sound System</p>
+              <p class="slot__stage">Scène Galet</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="feature programme__coup" aria-label="Coup de cœur de l'équipe">
+          <article class="artist">
+            <img class="artist__cover" src="img/fanfare-tanneries.svg" width="400" height="400" loading="lazy" alt="Visuel de la Fanfare des Tanneries : deux pavillons de cuivre jaune et rouge sur fond rose.">
+            <div class="artist__head">
+              <h3 class="artist__name">Fanfare des Tanneries</h3>
+              <p class="artist__genre">Cuivres · coup de cœur</p>
+            </div>
+            <p class="artist__bio">Vingt musiciens amateurs du quartier ouvrent le samedi en traversant le site, de la halle jusqu'à la plage. Suivez le tuba.</p>
+            <a class="artist__link" href="#slot-fanfare">Samedi 16h30, départ scène Remous<span class="u-visually-hidden"> : voir le créneau de la Fanfare des Tanneries</span></a>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Artistes ===== -->
+    <section class="section surface surface--strong" id="artistes" aria-labelledby="artistes-titre">
+      <div class="container artists">
+        <h2 id="artistes-titre">Les artistes</h2>
+
+        <div class="feature">
+          <article class="artist artist--headliner">
+            <img class="artist__cover" src="img/saturnales.svg" width="400" height="400" alt="Visuel des Saturnales : une planète rouge et jaune traversée d'un trait noir, au-dessus d'une bande verte.">
+            <div class="artist__head">
+              <h3 class="artist__name">Les Saturnales</h3>
+              <p class="artist__genre">Fanfare électro · tête d'affiche</p>
+            </div>
+            <p class="artist__bio">Neuf cuivres, deux batteries et un synthé modulaire monté sur un chariot de marché. Les Saturnales jouent comme une fanfare de mariage qui aurait découvert la techno à 3h du matin, et elles finissent rarement leur set sur scène.</p>
+            <a class="artist__link" href="#slot-saturnales">Vendredi 23h00, scène Galet<span class="u-visually-hidden"> : voir le créneau des Saturnales</span></a>
+          </article>
+        </div>
+
+        <ul class="lineup" role="list">
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/mona-kraft.svg" width="400" height="400" loading="lazy" alt="Visuel de Mona Kraft : trois cercles roses et crème empilés sur fond bleu.">
+              <div class="artist__head">
+                <h3 class="artist__name">Mona Kraft</h3>
+                <p class="artist__genre">Pop synthétique</p>
+              </div>
+              <p class="artist__bio">Des refrains qui collent, une boîte à rythmes de 1984 et une voix grave qui ne force jamais.</p>
+              <a class="artist__link" href="#slot-kraft">Vendredi 21h30, scène Galet<span class="u-visually-hidden"> : voir le créneau de Mona Kraft</span></a>
+            </article>
+          </li>
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/bassin-versant.svg" width="400" height="400" loading="lazy" alt="Visuel de Bassin Versant : trois vagues bleues sur fond vert d'eau.">
+              <div class="artist__head">
+                <h3 class="artist__name">Bassin Versant</h3>
+                <p class="artist__genre">Dub</p>
+              </div>
+              <p class="artist__bio">Un sound system nantais qui fait trembler la Loire depuis dix ans. Basses lentes, échos à rallonge, mélodica en invité surprise et dub plates gravés pour l'occasion.</p>
+              <a class="artist__link" href="#slot-bassin">Samedi 20h00, scène Galet<span class="u-visually-hidden"> : voir le créneau de Bassin Versant</span></a>
+            </article>
+          </li>
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/josephine-ardoise.svg" width="400" height="400" loading="lazy" alt="Visuel de Joséphine Ardoise : un soleil rouge couché sur un horizon noir.">
+              <div class="artist__head">
+                <h3 class="artist__name">Joséphine Ardoise</h3>
+                <p class="artist__genre">Chanson folk</p>
+              </div>
+              <p class="artist__bio">Guitare, banjo et histoires de mariniers. Elle ouvre le festival en douceur.</p>
+              <a class="artist__link" href="#slot-ardoise">Vendredi 18h30, scène Galet<span class="u-visually-hidden"> : voir le créneau de Joséphine Ardoise</span></a>
+            </article>
+          </li>
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/kilometre-zero.svg" width="400" height="400" loading="lazy" alt="Visuel de Kilomètre Zéro : deux bandes noires en diagonale et un carré jaune sur fond rouge.">
+              <div class="artist__head">
+                <h3 class="artist__name">Kilomètre Zéro</h3>
+                <p class="artist__genre">Rock garage</p>
+              </div>
+              <p class="artist__bio">Trois accords, deux amplis à lampes et un premier album enregistré en une nuit dans une cave d'Angers.</p>
+              <a class="artist__link" href="#slot-kilometre">Vendredi 20h00, scène Remous<span class="u-visually-hidden"> : voir le créneau de Kilomètre Zéro</span></a>
+            </article>
+          </li>
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/orage-mecanique.svg" width="400" height="400" loading="lazy" alt="Visuel d'Orage Mécanique : un éclair jaune sous un ciel bleu et noir.">
+              <div class="artist__head">
+                <h3 class="artist__name">Orage Mécanique</h3>
+                <p class="artist__genre">Post-rock</p>
+              </div>
+              <p class="artist__bio">Des morceaux de douze minutes qui montent lentement puis éclatent d'un coup. Sans paroles, mais on finit toujours par crier.</p>
+              <a class="artist__link" href="#slot-orage">Samedi 18h00, scène Remous<span class="u-visually-hidden"> : voir le créneau d'Orage Mécanique</span></a>
+            </article>
+          </li>
+          <li class="lineup__item">
+            <article class="artist">
+              <img class="artist__cover" src="img/dede-sound-system.svg" width="400" height="400" loading="lazy" alt="Visuel de Dédé Sound System : cinq haut-parleurs noirs sur fond jaune.">
+              <div class="artist__head">
+                <h3 class="artist__name">Dédé Sound System</h3>
+                <p class="artist__genre">Cumbia, afrobeat</p>
+              </div>
+              <p class="artist__bio">Le bal de clôture : cuivres, percussions et vinyles rapportés de Bogotá et de Lagos.</p>
+              <a class="artist__link" href="#slot-dede">Samedi 22h00, scène Galet<span class="u-visually-hidden"> : voir le créneau de Dédé Sound System</span></a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Billetterie ===== -->
+    <section class="section" id="billetterie" aria-labelledby="billetterie-titre">
+      <div class="container tickets">
+        <h2 id="billetterie-titre">Billetterie</h2>
+        <ul class="offers" role="list">
+          <li class="offer">
+            <h3 class="offer__name">Pass vendredi</h3>
+            <p class="offer__price">32 €</p>
+            <ul class="perks offer__perks" role="list">
+              <li>Les quatre concerts du vendredi</li>
+              <li>Gobelet réutilisable offert</li>
+              <li>Navette gratuite depuis la gare</li>
+            </ul>
+            <a class="btn offer__cta" href="mailto:billetterie@ricochet-festival.example?subject=Pass%20vendredi">Réserver le pass vendredi</a>
+          </li>
+          <li class="offer">
+            <p class="offer__badge">Le plus pris</p>
+            <h3 class="offer__name">Pass 2 jours</h3>
+            <p class="offer__price">55 €</p>
+            <ul class="perks offer__perks" role="list">
+              <li>Les huit concerts du week-end</li>
+              <li>Gobelet réutilisable offert</li>
+              <li>Accès au camping des berges</li>
+              <li>Navette gratuite depuis la gare</li>
+            </ul>
+            <a class="btn offer__cta" href="mailto:billetterie@ricochet-festival.example?subject=Pass%202%20jours">Réserver le pass 2 jours</a>
+          </li>
+          <li class="offer">
+            <h3 class="offer__name">Pass Ricochet+</h3>
+            <p class="offer__price">95 €</p>
+            <ul class="perks offer__perks" role="list">
+              <li>Le pass 2 jours complet</li>
+              <li>Terrasse au bord de l'eau avec bar dédié</li>
+              <li>Affiche sérigraphiée numérotée</li>
+            </ul>
+            <a class="btn offer__cta" href="mailto:billetterie@ricochet-festival.example?subject=Pass%20Ricochet%2B">Réserver le pass Ricochet+</a>
+          </li>
+        </ul>
+        <p class="tickets__note">
+          Entrée gratuite pour les moins de 12 ans accompagnés d'un adulte.
+          <button class="link-btn" type="button" popovertarget="tarifs-reduits">Voir les tarifs réduits</button>
+        </p>
+        <div class="sheet" id="tarifs-reduits" popover>
+          <h3 class="sheet__title">Tarifs réduits</h3>
+          <ul class="perks" role="list">
+            <li>Étudiants et moins de 26 ans : 30 % de réduction sur tous les pass</li>
+            <li>Demandeurs d'emploi et bénéficiaires des minima sociaux : pass 2 jours à 25 €</li>
+            <li>Accompagnateur d'une personne en situation de handicap : entrée gratuite</li>
+          </ul>
+          <p>Un justificatif est demandé à l'entrée.</p>
+          <button class="btn" type="button" popovertarget="tarifs-reduits" popovertargetaction="hide">Fermer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section surface surface--fresh" id="faq" aria-labelledby="faq-titre">
+      <div class="container faq">
+        <h2 id="faq-titre">Questions fréquentes</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-item__question">Puis-je revendre mon billet ?</summary>
+            <p class="faq-item__answer">Oui, jusqu'au 20 juin via la bourse d'échange officielle. Le billet est remis en vente à son prix d'origine et le nouveau nom est inscrit à l'entrée.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">Comment venir au festival ?</summary>
+            <p class="faq-item__answer">Une navette gratuite part de la gare de Saint-Galet toutes les vingt minutes de 15h30 à 2h. Un parking vélo surveillé de 400 places est installé à l'entrée.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">Le site est-il accessible en fauteuil roulant ?</summary>
+            <p class="faq-item__answer">Oui. Les allées sont stabilisées, une plateforme surélevée fait face à chaque scène et des toilettes adaptées sont réparties sur le site. Écrivez-nous pour réserver une place accompagnateur gratuite.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">Peut-on payer en espèces sur place ?</summary>
+            <p class="faq-item__answer">Oui, aux bars comme aux stands de nourriture. La carte bancaire et le paiement sans contact sont aussi acceptés partout.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">Les enfants sont-ils les bienvenus ?</summary>
+            <p class="faq-item__answer">Bien sûr. L'entrée est gratuite avant 12 ans et des casques anti-bruit sont prêtés à l'accueil contre une pièce d'identité.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question">Que se passe-t-il en cas d'orage ?</summary>
+            <p class="faq-item__answer">La scène Remous est couverte. Si un concert de la scène Galet doit être interrompu, il reprend dès que possible ou glisse sous la halle.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer surface surface--inverse">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__logo">Ricochet</p>
+        <p>Festival des berges, organisé par l'association Les Remous.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Contact</h2>
+        <address class="site-footer__list">
+          <span>Parc des Tanneries, 49000 Saint-Galet</span>
+          <a href="mailto:bonjour@ricochet-festival.example">bonjour@ricochet-festival.example</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Réseaux</h2>
+        <ul class="site-footer__list" role="list">
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://joinmastodon.org/">Mastodon</a></li>
+          <li><a href="https://bandcamp.com/">Bandcamp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Crédits</h2>
+        <ul class="site-footer__list" role="list">
+          <li>Polices <a href="https://fonts.google.com/specimen/Anton">Anton</a> (Vernon Adams) et <a href="https://fonts.google.com/specimen/Archivo">Archivo</a> (Omnibus-Type), licence SIL Open Font.</li>
+          <li>Illustrations SVG et décor du hero réalisés par le groupe.</li>
+        </ul>
+      </div>
+      <p class="site-footer__legal">Événement fictif, projet étudiant réalisé pour le module CSS avancé (Licence 3).</p>
+    </div>
+  </footer>
+</body>
+</html>

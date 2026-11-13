@@ -1,0 +1,178 @@
+/* Layout : conteneurs, bandeaux de couleur et grilles des sections. Mobile-first. */
+@layer layout {
+  .container {
+    inline-size: min(100% - 2 * var(--space-gutter), var(--content-max));
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  /* Bandeaux de couleur : chaque variante ne fait que choisir son couple fond / texte. */
+  .surface {
+    background-color: var(--surface-bg);
+    color: var(--surface-fg);
+  }
+
+  .surface--bright { --surface-bg: var(--color-surface-bright); --surface-fg: var(--color-on-bright); }
+  .surface--strong { --surface-bg: var(--color-surface-strong); --surface-fg: var(--color-on-strong); }
+  .surface--fresh { --surface-bg: var(--color-surface-fresh); --surface-fg: var(--color-on-fresh); }
+  .surface--inverse { --surface-bg: var(--color-surface-inverse); --surface-fg: var(--color-on-inverse); }
+
+  /* ===== En-tête ===== */
+
+  .site-header {
+    border-block-end: var(--border-width) solid var(--color-border);
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3) var(--space-6);
+    padding-block: var(--space-3);
+  }
+
+  /* Mobile : la nav passe sous le logo et la bascule de thème. */
+  .site-header__nav {
+    order: 1;
+    flex-basis: 100%;
+
+    @media (width >= 48rem) {
+      order: 0;
+      flex-basis: auto;
+      margin-inline-start: auto;
+    }
+  }
+
+  /* ===== Hero ===== */
+
+  .hero__inner {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-areas:
+      "titre"
+      "infos"
+      "actions"
+      "visuel";
+
+    @media (width >= 48rem) {
+      grid-template-columns: 3fr 2fr;
+      grid-template-areas:
+        "titre titre"
+        "infos visuel"
+        "actions visuel";
+      align-items: start;
+    }
+  }
+
+  .hero__heading { grid-area: titre; }
+  .hero__infos { grid-area: infos; }
+  .hero__actions { grid-area: actions; }
+  .hero__visual { grid-area: visuel; }
+
+  /* ===== Programme ===== */
+
+  .programme {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-areas:
+      "titre"
+      "intro"
+      "jour1"
+      "jour2"
+      "coup";
+
+    @media (width >= 48rem) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "titre intro"
+        "jour1 jour2"
+        "coup  coup";
+      column-gap: var(--space-8);
+    }
+
+    @media (width >= 64rem) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "titre titre intro"
+        "jour1 jour2 coup";
+    }
+  }
+
+  .programme__title { grid-area: titre; }
+  .programme__intro { grid-area: intro; }
+  .programme__day1 { grid-area: jour1; }
+  .programme__day2 { grid-area: jour2; }
+  .programme__coup { grid-area: coup; }
+
+  /* ===== Artistes ===== */
+
+  .artists {
+    display: grid;
+    gap: var(--space-stack);
+  }
+
+  /* Conteneur des cartes mises en avant (tête d'affiche, coup de cœur). Pas sur .lineup__item : la containment annule le subgrid. */
+  .feature {
+    container: artist / inline-size;
+  }
+
+  .lineup {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  /* Le li couvre 4 lignes de la grille parente et les transmet à la carte : images, noms, bios et liens alignés. */
+  .lineup__item {
+    grid-row: span 4;
+    display: grid;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  /* ===== Billetterie ===== */
+
+  .tickets {
+    display: grid;
+    gap: var(--space-stack);
+  }
+
+  .offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-8) var(--space-6);
+    align-items: center;
+  }
+
+  /* ===== FAQ ===== */
+
+  .faq {
+    display: grid;
+    gap: var(--space-stack);
+
+    @media (width >= 48rem) {
+      grid-template-columns: 2fr 3fr;
+      align-items: start;
+    }
+  }
+
+  /* ===== Footer ===== */
+
+  .site-footer {
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .site-footer__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: var(--space-8);
+  }
+
+  .site-footer__legal {
+    grid-column: 1 / -1;
+  }
+}

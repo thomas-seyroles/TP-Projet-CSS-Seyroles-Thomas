@@ -1,0 +1,65 @@
+/* Base : styles par défaut des éléments HTML, sans classes. */
+@layer base {
+  html {
+    scroll-padding-block-start: var(--space-4);
+
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+  }
+
+  :where(h1, h2, h3) {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+    line-height: 0.85;
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  :where(p, li, dd, address) {
+    overflow-wrap: break-word;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: var(--border-width-thin);
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      text-decoration-thickness: var(--border-width);
+    }
+  }
+
+  :focus-visible {
+    outline: var(--border-width) solid var(--color-focus);
+    outline-offset: var(--border-width-thin);
+    box-shadow: 0 0 0 calc(var(--border-width-thin) + var(--border-width)) var(--color-focus-halo);
+  }
+
+  ::selection {
+    background-color: var(--color-highlight);
+    color: var(--color-on-highlight);
+  }
+}

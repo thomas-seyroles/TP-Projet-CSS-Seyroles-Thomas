@@ -1,0 +1,135 @@
+/* Design tokens (layer base) : primitifs = valeurs brutes, sémantiques = rôles. Seuls les sémantiques sont utilisés ailleurs. */
+@layer base {
+  :root {
+    /* ===== Primitifs ===== */
+
+    --color-paper-50: oklch(97.5% 0.015 90);
+    --color-paper-300: oklch(86% 0.03 90);
+    --color-ink-700: oklch(40% 0.03 265);
+    --color-ink-800: oklch(27% 0.035 265);
+    --color-ink-900: oklch(21% 0.03 265);
+    --color-ink-950: oklch(16% 0.025 265);
+    --color-sun-400: oklch(88% 0.17 95);
+    --color-tomato-400: oklch(72% 0.16 35);
+    --color-tomato-500: oklch(65% 0.2 33);
+    --color-tomato-700: oklch(50% 0.18 30);
+    --color-cobalt-400: oklch(72% 0.12 262);
+    --color-cobalt-600: oklch(46% 0.2 264);
+    --color-cobalt-900: oklch(29% 0.11 264);
+    --color-mint-300: oklch(85% 0.11 165);
+    --color-mint-900: oklch(29% 0.05 170);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    --size-1: 2px;
+    --size-2: 3px;
+    --size-3: 6px;
+    --size-content: 74rem;
+
+    --radius-0: 0;
+    --radius-2: 0.375rem;
+    --radius-full: 999px;
+
+    --duration-150: 150ms;
+    --duration-250: 250ms;
+    --duration-700: 700ms;
+    --ease-snap: cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+    --font-anton: "Anton", "Impact", "Arial Narrow", sans-serif;
+    --font-archivo: "Archivo", system-ui, sans-serif;
+
+    /* ===== Sémantiques ===== */
+
+    color-scheme: light dark;
+
+    --color-surface: light-dark(var(--color-paper-50), var(--color-ink-900));
+    --color-surface-raised: light-dark(var(--color-paper-50), var(--color-ink-800));
+    --color-text: light-dark(var(--color-ink-900), var(--color-paper-50));
+    --color-text-muted: light-dark(var(--color-ink-700), var(--color-paper-300));
+    --color-border: light-dark(var(--color-ink-900), var(--color-paper-300));
+
+    --color-accent: light-dark(var(--color-tomato-500), var(--color-tomato-400));
+    --color-on-accent: var(--color-ink-900);
+    --color-accent-text: light-dark(var(--color-tomato-700), var(--color-tomato-400));
+    --color-secondary: light-dark(var(--color-cobalt-600), var(--color-cobalt-400));
+    --color-highlight: var(--color-sun-400);
+    --color-tint: var(--color-paper-50);
+    --color-on-highlight: var(--color-ink-900);
+
+    --color-action: light-dark(var(--color-ink-900), var(--color-sun-400));
+    --color-on-action: light-dark(var(--color-paper-50), var(--color-ink-900));
+    --color-action-hover: var(--color-tomato-500);
+    --color-on-action-hover: var(--color-ink-900);
+
+    --color-surface-bright: light-dark(var(--color-sun-400), var(--color-ink-950));
+    --color-on-bright: light-dark(var(--color-ink-900), var(--color-sun-400));
+    --color-surface-strong: light-dark(var(--color-cobalt-600), var(--color-cobalt-900));
+    --color-on-strong: var(--color-paper-50);
+    --color-surface-fresh: light-dark(var(--color-mint-300), var(--color-mint-900));
+    --color-on-fresh: light-dark(var(--color-ink-900), var(--color-paper-50));
+    --color-surface-inverse: light-dark(var(--color-ink-900), var(--color-ink-950));
+    --color-on-inverse: var(--color-paper-50);
+    --color-link-inverse: var(--color-sun-400);
+
+    --color-stage-galet: var(--color-accent);
+    --color-stage-remous: var(--color-secondary);
+
+    /* Anneau noir + halo jaune : reste visible sur toutes les surfaces, claires ou foncées. */
+    --color-focus: var(--color-ink-950);
+    --color-focus-halo: var(--color-sun-400);
+
+    --font-display: var(--font-anton);
+    --font-body: var(--font-archivo);
+
+    --font-size-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.95rem);
+    --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lead: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+    --font-size-h3: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+    --font-size-h2: clamp(3rem, 1.75rem + 6vw, 6.5rem);
+    --font-size-h1: clamp(4.5rem, 1rem + 17vw, 15rem);
+    --font-size-time: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+    --font-size-logo: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+    --font-size-price: clamp(3rem, 2.5rem + 2vw, 4.5rem);
+    /* En cqi : suit la largeur du conteneur de la carte, pas celle de l'écran. */
+    --font-size-feature: clamp(2rem, 1rem + 7cqi, 5rem);
+
+    --content-max: var(--size-content);
+    --space-gutter: clamp(var(--space-4), 0.5rem + 2.5vw, var(--space-8));
+    --space-section: clamp(var(--space-12), 1.5rem + 6vw, 7rem);
+    --space-stack: var(--space-8);
+    --space-card: var(--space-6);
+
+    --offset-lift: calc(-1 * var(--size-2));
+    --border-width-thin: var(--size-1);
+    --border-width: var(--size-2);
+    --border-width-strong: var(--size-3);
+    --radius-control: var(--radius-2);
+    --radius-card: var(--radius-0);
+    --radius-pill: var(--radius-full);
+
+    --duration-fast: var(--duration-150);
+    --duration-base: var(--duration-250);
+    --duration-slow: var(--duration-700);
+    --ease-out: var(--ease-out-quart);
+    --ease-bounce: var(--ease-snap);
+  }
+
+  /* Bascule CSS-only : la case inverse le thème du système. */
+  :root:has(#theme-toggle:checked) {
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:has(#theme-toggle:checked) {
+      color-scheme: light;
+    }
+  }
+}

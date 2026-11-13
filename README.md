@@ -46,29 +46,25 @@ Tokens : les couleurs, tailles de texte, bordures, rayons et durées ne sont uti
 | 7. Accessibilité | `:focus-visible` | `css/base.css:55` | Anneau noir + halo jaune, visible sur toutes les surfaces |
 | 7. Accessibilité | Contrastes AA | `css/tokens.css:49` | Tous les textes contrôlés dans les deux thèmes avec un script de calcul de ratio WCAG (Chromium) : aucun en dessous de 4,5:1 (3:1 pour le grand texte) |
 | 7. Accessibilité | `alt` | `index.html:139` | Description des visuels ; le décor du hero est en `aria-hidden` |
-| 8. Qualité | Validateur W3C | - | À passer avant le rendu (voir ci-dessous) |
+| 8. Qualité | Validateur W3C | - | Passé le 13/11/2026 (profil CSS niveau 3 + SVG, par défaut) : `reset.css`, `base.css` et `utilities.css` valides ; aucune vraie erreur ailleurs, seulement les syntaxes récentes listées ci-dessous |
 | 8. Qualité | `!important` | - | Aucun |
 
 ## Avertissements du validateur W3C
 
-Syntaxes récentes susceptibles d'être signalées (à compléter après passage sur https://jigsaw.w3.org/css-validator/) :
+Résultat du validateur (https://jigsaw.w3.org/css-validator/, saisie directe fichier par fichier, profil CSS niveau 3 + SVG). Toutes les erreurs restantes portent sur des syntaxes récentes que le validateur ne connaît pas encore :
 
-| Fichier:ligne | Syntaxe | Pourquoi c'est valide |
+| Fichier:ligne | Message du validateur | Pourquoi c'est valide |
 |---|---|---|
-| `css/main.css:2` | `@layer` avant les `@import` | Cascade Layers, Baseline 2022 : seule règle autorisée avant `@import` |
-| `css/tokens.css:6` et suivantes | `oklch()` | CSS Color 4, Baseline 2023 |
-| `css/tokens.css:53` et suivantes | `light-dark()` | CSS Color 5, Baseline 2024 |
-| tous les fichiers | Nesting natif (`&`) | CSS Nesting, Baseline 2023 |
-| `css/layout.css:43`, `:61`, `:88`, `:97`, `:157` | `@media (width >= …)` | Media Queries 4 (syntaxe d'intervalle), Baseline 2023 |
-| `css/layout.css:120`, `css/components.css:363` | `container`, `@container`, unité `cqi` | Container Queries, Baseline 2023 |
-| `css/tokens.css:126` | `:has()` | Selectors 4, Baseline 2023 |
-| `css/components.css:106`, `:498` | `color-mix()` | CSS Color 5, Baseline 2023 |
-| `css/base.css:24` | `text-wrap: balance` | CSS Text 4, Baseline 2024 |
-| `css/components.css` (plusieurs) | `translate`, `rotate`, `scale` | Propriétés de transformation individuelles, Baseline 2022 |
-| `css/components.css:484` | `:popover-open` | Popover API, Baseline 2024 |
-| `css/components.css:623` | `animation-timeline`, `animation-range` | Scroll-driven Animations, dans `@supports` |
-| `css/components.css:491` | `@starting-style`, `overlay`, `allow-discrete` | CSS Transitions 2, Baseline 2024 |
-| `css/components.css:532` | `::-webkit-details-marker` | Masque le triangle natif de `<summary>` dans Safari |
+| `css/main.css:4` à `:9` | `@import` non autorisé après une autre déclaration | La déclaration `@layer reset, base, …;` est la seule règle autorisée avant les `@import` (Cascade Layers, Baseline 2022) |
+| `css/tokens.css:53` à `:78` | Erreur interne du validateur (`Cannot invoke … getType()`) sur les lignes en `light-dark()` | `light-dark()`, CSS Color 5, Baseline 2024 : le validateur plante sur la fonction |
+| `css/tokens.css:102` | Erreur lors de l'analyse grammaticale | Unité `cqi` dans `clamp()`, Container Queries, Baseline 2023 |
+| `css/layout.css:4` | `min(100% - 2 * var(…), var(…))` n'est pas une valeur de `inline-size` | Fonction mathématique avec `var()`, valide (CSS Values 4) ; le validateur ne résout pas `var()` dans `min()` |
+| `css/layout.css:120` | La propriété `container` n'existe pas | Raccourci de `container-name` / `container-type`, Container Queries, Baseline 2023 |
+| `css/components.css:363` | `@container` n'est pas reconnue | Container Queries, Baseline 2023 |
+| `css/components.css:491` | `@starting-style` n'est pas reconnue | CSS Transitions 2, Baseline 2024 |
+| `css/components.css:623`, `:627`, `:628` | `animation-timeline` et `animation-range` n'existent pas | Scroll-driven Animations, en amélioration progressive dans `@supports` |
+
+Le nesting natif, `oklch()`, `color-mix()`, `:has()`, `text-wrap`, les media queries `(width >= …)` et `:popover-open` passent sans erreur.
 
 ## Bonus technique revendiqué
 
